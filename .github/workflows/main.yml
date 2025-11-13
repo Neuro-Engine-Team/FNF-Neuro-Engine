@@ -1,0 +1,14 @@
+name: Main
+
+on: workflow_dispatch
+
+jobs:
+  Android:
+    uses: ./.github/workflows/build.yml
+    with:
+      name: Android
+      os: macos-15
+      setupCommand: sh ./setup/unix.sh
+      buildArgs: "android -ONLY_ARMV7"
+      artifactName: androidBuild
+      artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
