@@ -1,92 +1,91 @@
 {
   "dependencies": [
     {
-      "name": "hxcpp",
-      "type": "haxelib",
-      "version": "4.3.2"
+      "name": "lime",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/lime"
     },
     {
       "name": "openfl",
-      "type": "haxelib",
-      "version": "9.3.3"
-    },
-    {
-      "name": "lime",
-      "type": "haxelib",
-      "version": "8.1.2"
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/openfl"
     },
     {
       "name": "flixel",
       "type": "git",
+      "dir": null,
+      "ref": null,
       "url": "https://github.com/SatoruSam/flixel"
     },
     {
       "name": "flixel-addons",
       "type": "git",
+      "dir": null,
+      "ref": null,
       "url": "https://github.com/SatoruSam/flixel-addons"
     },
     {
       "name": "flixel-ui",
       "type": "git",
+      "dir": null,
+      "ref": null,
       "url": "https://github.com/SatoruSam/flixel-ui"
     },
     {
-      "name": "flixel-tools",
-      "type": "haxelib",
-      "version": "1.5.1"
+      "name": "hxcpp",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/hxcpp"
     },
     {
-      "name": "tjson",
-      "type": "haxelib",
-      "version": "1.4.0"
+      "name": "SScript",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/SScript"
     },
     {
       "name": "hxdiscord_rpc",
       "type": "haxelib",
-      "version": "1.2.4"
+      "version": null
+    },
+    {
+      "name": "hxluajit",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/hxluajit"
+    },
+    {
+      "name": "hxgamemode",
+      "type": "haxelib",
+      "version": null
+    },
+    {
+      "name": "format",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/format"
+    },
+    {
+      "name": "hxp",
+      "type": "git",
+      "dir": null,
+      "ref": null,
+      "url": "https://github.com/SatoruSam/hxp"
     },
     {
       "name": "hxvlc",
       "type": "git",
+      "dir": null,
+      "ref": null,
       "url": "https://github.com/SatoruSam/hxvlc"
-    },
-    {
-      "name": "hscript-iris",
-      "type": "haxelib",
-      "version": "1.1.3"
-    },
-    {
-      "name": "hxcpp-debug-server",
-      "type": "haxelib",
-      "version": "1.2.4"
-    },
-    {
-      "name": "linc_luajit",
-      "type": "git",
-      "url": "https://github.com/SatoruSam/hxluajit"
-    },
-    {
-      "name": "flxanimate",
-      "type": "git",
-      "url": "https://github.com/Dot-Stuff/flxanimate",
-      "ref": "768740a56b26aa0c072720e0d1236b94afe68e3e"
-    },
-    {
-      "name": "funkin.vis",
-      "type": "git",
-      "url": "https://github.com/FunkinCrew/funkVis",
-      "ref": "22b1ce089dd924f15cdc4632397ef3504d464e90"
-    },
-    {
-      "name": "grig.audio",
-      "type": "git",
-      "url": "https://gitlab.com/haxe-grig/grig.audio.git",
-      "ref": "cbf91e2180fd2e374924fe74844086aab7891666"
-    },
-    {
-      "name": "extension-androidtools",
-      "type": "haxelib",
-      "version": "2.2.2"
     }
   ]
 }
