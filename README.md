@@ -17,14 +17,12 @@ For this you can head over to [the wiki](https://shadowmario.github.io/psychengi
 
 There you can learn how to use the 212 PlayState funcions in your mod!
 
-## Mobile Credits:
+## All Thanks Credits
+* Shadow Mario - Main Programmer and Head of Psych Engine.
+* Riveren - Main Artist/Animator of Psych Engine.
 * Homura - Head Porter of Psych Engine Mobile.
 * Karim - Second Porter of Psych Engine Mobile.
 * Moxie - Helper of Psych Engine Mobile.
-
-## Credits:
-* Shadow Mario - Main Programmer and Head of Psych Engine.
-* Riveren - Main Artist/Animator of Psych Engine.
 
 ### Psych Special Thanks
 * bbpanzu - Ex-Team Member (Programmer).
@@ -125,4 +123,4 @@ There you can learn how to use the 212 PlayState funcions in your mod!
 * You can enable "Combo Stacking" in Gameplay Options. This causes the combo sprites to just be one sprite with an animation rather than sprites spawning each note hit.
 
 
-#### Psych Engine by ShadowMario, Friday Night Funkin' by ninjamuffin99
+#### Psych Engine Mobile My Modifiy Version
