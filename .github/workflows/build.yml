@@ -47,10 +47,6 @@ jobs:
           ndk-version: r27c
           add-to-path: false
 
-      - name: Install libVLC
-        if: contains(inputs.name, 'Linux')
-        run: sudo apt install libvlc-dev libvlccore-dev
-
       - name: Install Libraries
         run: |
           haxelib git hmm https://github.com/SatoruSam/hmm --skip-dependencies --quiet
