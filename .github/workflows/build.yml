@@ -50,7 +50,7 @@ jobs:
       - name: Install Libraries
         run: |
           haxelib git hmm https://github.com/SatoruSam/hmm --skip-dependencies --quiet
-          haxelib git lime https://github.com/SatoruSam/lime
+          haxelib install lime
           haxelib install flixel-addons 3.2.2
           haxelib install tjson 1.4.0
           haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate
