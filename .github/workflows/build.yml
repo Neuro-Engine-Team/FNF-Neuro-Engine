@@ -50,17 +50,20 @@ jobs:
       - name: Install Libraries
         run: |
           haxelib git hmm https://github.com/SatoruSam/hmm --skip-dependencies --quiet
-          haxelib run hmm install --quiet
-          
-      - name: Install flixel-addons
-        run: |
-         haxelib remove flixel-addons || true
-         haxelib install flixel-addons 3.2.2
-
-      - name: Install tjson
-        run: |
-         haxelib remove tjson || true
-         haxelib install tjson 1.4.0
+          haxelib git lime https://github.com/SatoruSam/lime
+          haxelib install flixel-addons 3.2.2
+          haxelib install tjson 1.4.0
+          haxelib git openfl https://github.com/SatoruSam/openfl
+          haxelib git flixel https://github.com/SatoruSam/flixel
+          haxelib git flixel-ui https://github.com/SatoruSam/flixel-ui
+          haxelib git hxcpp https://github.com/SatoruSam/hxcpp
+          haxelib git SScript https://github.com/SatoruSam/SScript
+          haxelib install hxdiscord_rpc
+          haxelib git hxluajit https://github.com/SatoruSam/hxluajit
+          haxelib install hxgamemode
+          haxelib git format https://github.com/SatoruSam/format
+          haxelib git hxp https://github.com/SatoruSam/hxp
+          haxelib git hxvlc https://github.com/SatoruSam/hxvlc
 
       - name: Configure Android
         if: inputs.name == 'Android'
