@@ -41,15 +41,15 @@ jobs:
 
       - name: Install Libraries
         run: |
-          haxelib git lime https://github.com/SatoruSam/lime
+          haxelib install lime 8.1.2
           haxelib run lime setup
           haxelib install linc_luajit
           haxelib install flixel-addons 3.2.2
           haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate
-          haxelib git openfl https://github.com/SatoruSam/openfl
+          haxelib install openfl 9.3.3
           haxelib install flixel 5.6.1
           haxelib git flixel-ui https://github.com/SatoruSam/flixel-ui
-          haxelib git hxcpp https://github.com/SatoruSam/hxcpp
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
           haxelib git SScript https://github.com/SatoruSam/SScript
           haxelib install hxdiscord_rpc
           haxelib git hxluajit https://github.com/SatoruSam/hxluajit
