@@ -43,6 +43,7 @@ jobs:
         run: |
           haxelib git lime https://github.com/SatoruSam/lime
           haxelib run lime setup
+          haxelib install linc_luajit
           haxelib git flixel-addons https://github.com/SatoruSam/flixel-addons
           haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate
           haxelib git openfl https://github.com/SatoruSam/openfl
