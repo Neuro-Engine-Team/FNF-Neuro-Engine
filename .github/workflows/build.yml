@@ -55,16 +55,7 @@ jobs:
       - name: Clean Lime
         if: inputs.name == 'Android'
         run: haxelib run lime clean android
-
-      - name: Setup Android
-        if: inputs.name == 'Android'
-        run: |
-          haxelib run lime setup android
-          
-      - name: Print build classpath
-        run: |
-          haxelib run lime build android -D haxelib=1
-
+        
       - name: Compile
         if: inputs.name == 'Android'
         run: haxelib run lime build android ${{ inputs.buildArgs }}
