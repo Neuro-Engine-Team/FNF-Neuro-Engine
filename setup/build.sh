@@ -4,7 +4,9 @@ set -e
 echo "Installing the libraries"
 
 haxelib install lime 8.2.2 --quiet
+haxelib set lime 8.2.2
 haxelib install openfl 9.4.1 --quiet
+haxelib set openfl 9.4.1
 haxelib install flixel 5.6.1 --quiet
 haxelib install flixel-addons 3.2.2 --quiet
 haxelib install flixel-tools 1.5.1 --quiet
@@ -24,5 +26,8 @@ haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git --quiet
 haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate --quiet
 haxelib git funkin.vis https://github.com/FunkinCrew/funkVis --quiet
 haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git --quiet
+
+haxelib set lime 8.2.2
+haxelib set openfl 9.4.1
 
 echo "Libraries installed successfully"
