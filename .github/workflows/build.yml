@@ -41,23 +41,8 @@ jobs:
 
       - name: Install Libraries
         run: |
-          haxelib install lime 8.1.2
-          haxelib install linc_luajit
-          haxelib install tjson
-          haxelib install flixel-addons 3.2.2
-          haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate
-          haxelib git extension‑androidtools https://github.com/LimeExtensions/extension‑androidtools.git
-          haxelib install openfl 9.3.3
-          haxelib install flixel 5.6.1
-          haxelib git flixel-ui https://github.com/SatoruSam/flixel-ui
-          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
-          haxelib git SScript https://github.com/SatoruSam/SScript
-          haxelib install hxdiscord_rpc
-          haxelib git hxluajit https://github.com/SatoruSam/hxluajit
-          haxelib install hscript-iris 1.1.3
-          haxelib git format https://github.com/SatoruSam/format
-          haxelib git hxp https://github.com/SatoruSam/hxp
-          haxelib git hxvlc https://github.com/SatoruSam/hxvlc
+          haxelib git hmm https://github.com/TheFrost72/hmm.git --skip-dependencies --quiet
+          haxelib run hmm install --quiet
 
       - name: Configure Android
         if: inputs.name == 'Android'
@@ -68,11 +53,12 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
 
       - name: Clean Lime
+        if: inputs.name == 'Android'
         run: haxelib run lime clean android
 
       - name: Compile
         if: inputs.name == 'Android'
-        run: haxelib run lime build android ${{ inputs.buildArgs }} -D android -D ${{ inputs.assetType }}
+        run: haxelib run lime build android ${{ inputs.buildArgs }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
