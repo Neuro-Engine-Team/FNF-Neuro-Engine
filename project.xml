@@ -120,7 +120,6 @@
 	<haxelib name="hxvlc" if="VIDEOS_ALLOWED"/>
 	<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/>
 	<haxelib name="flxanimate"/>
-    <haxelib name="extension-androidtools"/>
 	<haxelib name="tjson"/>
 
 	<!-- Disable Discord IO Thread -->
