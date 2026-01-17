@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo"Installing the libraries..."
+echo "Installing the libraries..."
 
 # Haxe libs (haxelib)
 haxelib install openfl 9.4.1
@@ -26,4 +26,4 @@ haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate
 haxelib git funkin.vis https://github.com/FunkinCrew/funkVis
 haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git
 
-echo"libraries installed successfully"
+echo "Libraries installed successfully"
