@@ -50,9 +50,9 @@ jobs:
           haxelib run lime config JAVA_HOME $JAVA_HOME_21_arm64
           haxelib run lime config ANDROID_SETUP true
           
-      - name: Clean Lime
-        if: inputs.name == 'Android'
-        run: haxelib run lime clean android
+     # - name: Clean Lime
+       # if: inputs.name == 'Android'
+        #run: haxelib run lime clean android
         
       - name: Compile
         if: inputs.name == 'Android'
