@@ -2,11 +2,6 @@
 set -e
 
 echo "Installing the libraries"
-
-# --- HARD RESET ---
-haxelib remove lime || true
-haxelib remove openfl || true
-
 # --- CORE (LOCK FIRST) ---
 haxelib install hxcpp 4.3.2 --quiet
 
@@ -40,9 +35,5 @@ haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git --quiet
 
 # --- ANDROID (LAST) ---
 haxelib git extension-androidtools https://github.com/TheFrost72/extension-androidtools --quiet
-
-# --- SAFETY LOCK ---
-haxelib set lime 8.2.2
-haxelib set openfl 9.4.1
 
 echo "Libraries installed successfully"
