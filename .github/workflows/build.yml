@@ -44,6 +44,9 @@ jobs:
           haxelib git hmm https://github.com/TheFrost72/hmm.git --skip-dependencies --quiet
           haxelib run hmm install --quiet
 
+      - name: Check extension-androidtools files
+        run: find ~/.haxelib/extension-androidtools -maxdepth 3 -type f | head
+
       - name: Configure Android
         if: inputs.name == 'Android'
         run: |
