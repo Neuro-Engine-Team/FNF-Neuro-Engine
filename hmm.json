@@ -2,8 +2,8 @@
   "dependencies": [
     {
       "name": "lime",
-      "type": "haxelib",
-      "version": "8.1.2"
+      "type": "git",
+      "url": "https://github.com/TheFrost72/lime"
     },
     {
       "name": "openfl",
@@ -74,11 +74,6 @@
       "name": "hxluajit",
       "type": "git",
       "url": "https://github.com/MAJigsaw77/hxluajit"
-    },
-    {
-      "name": "extension-androidtools",
-      "type": "haxelib",
-      "version": "2.2.2"
     },
     {
       "name": "linc_luajit",
