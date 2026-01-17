@@ -32,40 +32,43 @@ jobs:
     runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@master
+        uses: krdlab/setup-haxe@v1
         with:
           haxe-version: ${{ env.HAXE_VERSION }}
 
-      - name: Install Libraries
+      - name: Install Libraries (run script)
         run: bash setup/build.sh
 
-      - name: Install extension-androidtools
+      # Ensure extension is registered (defensive in case script didn't)
+      - name: Ensure extension-androidtools registered
         run: |
-          haxelib remove extension-androidtools || true
-          haxelib git extension-androidtools https://github.com/TheFrost72/extension-androidtools --skip-dependencies --quiet
-          haxelib set extension-androidtools git
+          # make sure haxelib path exists
+          haxelib setup ~/.haxelib || true
+          if [ ! -d "$HOME/.haxelib/extension-androidtools" ]; then
+            mkdir -p ~/.haxelib
+            git clone --depth 1 https://github.com/TheFrost72/extension-androidtools ~/.haxelib/extension-androidtools
+          fi
+          # make absolute path .current
+          realpath ~/.haxelib/extension-androidtools > ~/.haxelib/extension-androidtools/.current
+          haxelib set extension-androidtools git || true
 
       - name: Configure Android
-        if: inputs.name == 'Android'
+        if: ${{ inputs.name == 'Android' }}
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME_21_arm64
           haxelib run lime config ANDROID_SETUP true
-          
-     # - name: Clean Lime
-       # if: inputs.name == 'Android'
-        #run: haxelib run lime clean android
-        
+
       - name: Compile
-        if: inputs.name == 'Android'
+        if: ${{ inputs.name == 'Android' }}
         run: haxelib run lime build android -Dandroid-arch=armv7 ${{ inputs.buildArgs }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifactName }}
           path: ${{ inputs.artifactPath }}
