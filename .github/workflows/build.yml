@@ -54,9 +54,7 @@ jobs:
 
       - name: Clean Android
         if: ${{ inputs.name == 'Android' }}
-        run: |
-          haxelib set lime 8.2.1
-          haxelib run lime clean android
+        run: haxelib run lime clean android
 
       - name: Compile
         if: ${{ inputs.name == 'Android' }}
