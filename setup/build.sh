@@ -1,13 +1,6 @@
 #!/bin/bash
 set -e
 
-# Set haxelib repository folder
-HAXELIB_DIR="$HOME/haxelib"
-
-# Tell haxelib to use this folder
-echo "$HAXELIB_DIR" > "$HOME/.haxelib"
-mkdir -p "$HAXELIB_DIR"
-
 echo "Installing the libraries"
 haxelib install hxcpp 4.3.2 --skip-dependencies --quiet
 haxelib install lime 8.2.2 --skip-dependencies --quiet
@@ -30,11 +23,6 @@ haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git --skip-
 haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate --skip-dependencies --quiet
 haxelib git funkin.vis https://github.com/FunkinCrew/funkVis --skip-dependencies --quiet
 haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git --skip-dependencies --quiet
-
-# Install extension-androidtools manually (CI-safe)
-EXT_DIR="$HAXELIB_DIR/extension-androidtools"
-rm -rf "$EXT_DIR"
-git clone --depth 1 https://github.com/TheFrost72/extension-androidtools "$EXT_DIR"
-echo "$EXT_DIR" > "$EXT_DIR/.current"
+haxelib git extension-androidtools https://github.com/TheFrost72/extension-androidtools --skip-dependencies --quiet
 
 echo "Libraries installed successfully"
