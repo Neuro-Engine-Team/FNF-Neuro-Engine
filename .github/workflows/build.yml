@@ -43,7 +43,6 @@ jobs:
         run: |
           bash setup/build.sh
           haxelib list
-            
            
       - name: Configure Android
         if: ${{ inputs.name == 'Android' }}
@@ -52,6 +51,12 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
+
+      - name: Clean Android
+        if: ${{ inputs.name == 'Android' }}
+        run: |
+          haxelib set lime 8.2.1
+          haxelib run lime clean android
 
       - name: Compile
         if: ${{ inputs.name == 'Android' }}
