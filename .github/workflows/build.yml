@@ -41,16 +41,6 @@ jobs:
 
       - name: Install Libraries (run script)
         run: bash setup/build.sh
-
-      # Ensure extension is registered (defensive in case script didn't)
-      - name: Ensure extension-androidtools registered
-        run: |
-           HAXELIB_DIR="$HOME/haxelib"
-           mkdir -p "$HAXELIB_DIR"
-           if [ ! -d "$HAXELIB_DIR/extension-androidtools" ]; then
-           git clone --depth 1 https://github.com/TheFrost72/extension-androidtools "$HAXELIB_DIR/extension-androidtools"
-           fi
-           realpath "$HAXELIB_DIR/extension-androidtools" > "$HAXELIB_DIR/extension-androidtools/.current"
            
       - name: Configure Android
         if: ${{ inputs.name == 'Android' }}
