@@ -300,7 +300,7 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			Main.fpsVar.visible = ClientPrefs.data.showFPS;
 	}
 
-	#if native
+	#if (lime >= "8.2.2")
 	function onChangeVSync()
 		lime.app.Application.current.window.vsync = ClientPrefs.data.vsync;
 	#end
