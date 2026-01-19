@@ -25,6 +25,8 @@ on:
 env:
   HAXE_VERSION: 4.3.2
   PROJECT_NAME: NeuroEngine
+  GRADLE_OPTS: -Xmx4096m -Dorg.gradle.daemon=false
+  _JAVA_OPTIONS: -Xmx4096m
 
 jobs:
   build:
@@ -70,6 +72,11 @@ jobs:
         if: ${{ inputs.name == 'Android' }}
         run: haxelib run lime clean android
 
+      - name: Configure Gradle Heap
+        run: |
+          echo "org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8" >> ~/.gradle/gradle.properties
+          echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
+          
       - name: Compile
         if: ${{ inputs.name == 'Android' }}
         run: haxelib run lime build android -Dandroid-arch=arm64 -DHXCPP_STL_HTTP=libc++ ${{ inputs.buildArgs }}
