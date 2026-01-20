@@ -1,6 +1,6 @@
 ![NeuroEngineLogo](docs/img/NeuroEngineLogo.png)
 
-Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
+Engine based on the [PsychEngine](https://github.com/ShadowMario/FNF-PsychEngine), A fork of an abandoned project made by the MobilePorting Team, porting the *Psych Engine to mobile*.
 
 ## Customization:
 
@@ -23,6 +23,7 @@ There you can learn how to use the 212 PlayState funcions in your mod!
 * Homura - Head Porter of Psych Engine Mobile.
 * Karim - Second Porter of Psych Engine Mobile.
 * Moxie - Helper of Psych Engine Mobile.
+* TheFrost72 – Main person responsible for Neuro Engine adaptations and modifications
 
 ### Psych Special Thanks
 * bbpanzu - Ex-Team Member (Programmer).
