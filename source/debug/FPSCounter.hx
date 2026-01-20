@@ -73,7 +73,8 @@ class FPSCounter extends TextField
 	{
 		text = 
 		'FPS: $currentFPS' + 
-		'\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
+		'\nRAM: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
+		'\nNeuroEngine v(0.1.0)' +
 		os;
 
 		textColor = 0xFFFFFFFF;
