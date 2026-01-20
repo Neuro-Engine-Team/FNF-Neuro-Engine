@@ -42,20 +42,12 @@ jobs:
         with:
           haxe-version: ${{ env.HAXE_VERSION }}
 
-      - name: Cache Haxelib
-        uses: actions/cache@v4
-        with:
-          path: ~/.haxelib
-          key: ${{ runner.os }}-haxelib-${{ hashFiles('setup/build.sh') }}
-          restore-keys: |
-            ${{ runner.os }}-haxelib-
-
       - name: Install Libraries (run script)
         run: |
           bash setup/build.sh
           haxelib list
 
-      - name: Install Android NDK r21e
+      - name: Install Android NDK
         run: |
           echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "ndk;21.4.7075529"
           echo "ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/21.4.7075529" >> $GITHUB_ENV
