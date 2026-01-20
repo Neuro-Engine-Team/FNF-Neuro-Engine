@@ -28,15 +28,16 @@
 	<define name="TRANSLATIONS_ALLOWED" />
 	<define name="COPYSTATE_ALLOWED" if="MODS_ALLOWED mobile"/>
 	<define name="IRIS_DEBUG"/>
+	<define name="TITLE_SCREEN_EASTER_EGG"/>
+	<define name="VIDEOS_ALLOWED" if="desktop || mobile" unless="32bits"/> <!-- IF YOU WANT TO USE VIDEOS ON YOUR SOURCE MOD, GET THIS LINE OUTSIDE OF THE SECTION -->
+	
 	
 	<define name="MULTITHREADED_LOADING" if="cpp" /> <!-- UNCOMMENTING THIS LINE WILL ENABLE MULTITHREADED LOADING, WHICH IMPROVES LOADING TIMES, BUT WITH A LOW CHANCE FOR THE GAME FREEZE ON SONG LOAD -->
 	<define name="SHOW_LOADING_SCREEN" />
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE THE PSYCH LOGO FROM LOADING SCREEN -->
 
 	<section if="official build">
-		<define name="TITLE_SCREEN_EASTER_EGG"/>
 		<define name="BASE_GAME_FILES" />
-		<define name="VIDEOS_ALLOWED" if="desktop || mobile" unless="32bits"/> <!-- IF YOU WANT TO USE VIDEOS ON YOUR SOURCE MOD, GET THIS LINE OUTSIDE OF THE SECTION -->
 	</section>
 
 	<!-- ____________________________ Window Settings ___________________________ -->
@@ -75,6 +76,8 @@
 	<assets path="assets/fonts" />
 	<assets path="assets/shared" exclude="*.mp3"/>
 	<assets path="assets/base_game/songs" exclude="*.mp3" rename="assets/songs"/>
+	<assets path="assets/songs" exclude="*.mp3" unless="web"/>
+	<assets path="assets/embed" exclude="*.mp3" unless="web" embed="true"/>
 	<assets path="assets/base_game/shared" rename="assets/shared" exclude="*.mp3"/>
 	<assets path="assets/base_game/videos" rename="assets/videos"/>
 	<assets path="assets/base_game/week1" rename="assets/week1"/>
@@ -85,6 +88,7 @@
 	<assets path="assets/base_game/week6" rename="assets/week6"/>
 	<assets path="assets/base_game/week7" rename="assets/week7"/>
 	<assets path="assets/base_game/weekend1" rename="assets/weekend1"/>
+	<assets path="assets/week_assets" rename="assets" exclude="*.mp3" unless="web"/>
 	<assets path="assets/secrets" rename="assets/shared" exclude="*.mp3"/>
 
 	<section if="TRANSLATIONS_ALLOWED">
