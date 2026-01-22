@@ -13,7 +13,7 @@ import states.TitleState;
 import crowplexus.iris.Iris;
 import psychlua.HScript.HScriptInfos;
 #end
-import mobile.backend.MobileScaleMode;
+//import mobile.backend.MobileScaleMode;
 import openfl.events.KeyboardEvent;
 import lime.system.System as LimeSystem;
 
@@ -148,10 +148,10 @@ class Main extends Sprite
 		ClientPrefs.loadDefaultKeys();
 		#if ACHIEVEMENTS_ALLOWED Achievements.load(); #end
 		#if mobile
-		FlxG.signals.postGameStart.addOnce(() -> {
-			FlxG.scaleMode = new MobileScaleMode();
+        FlxG.signals.postGameStart.addOnce(() -> {
+        FlxG.scaleMode = new flixel.system.scaleModes.FillScaleMode();
 		});
-		#end
+        #end
 		addChild(new FlxGame(game.width, game.height, #if COPYSTATE_ALLOWED !CopyState.checkExistingFiles() ? CopyState : #end game.initialState, game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
 		fpsVar = new FPSCounter(10, 3, 0xFFFFFF);
