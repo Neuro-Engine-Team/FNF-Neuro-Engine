@@ -49,6 +49,10 @@ import psychlua.LuaUtils;
 import psychlua.HScript;
 #end
 
+#if mobile
+import mobile.objects.PauseButton;
+#end
+
 #if HSCRIPT_ALLOWED
 import psychlua.HScript.HScriptInfos;
 import crowplexus.iris.Iris;
@@ -112,6 +116,10 @@ class PlayState extends MusicBeatState
 	public var songSpeed(default, set):Float = 1;
 	public var songSpeedType:String = "multiplicative";
 	public var noteKillOffset:Float = 350;
+	
+	#if mobile
+	public var pauseButton:PauseButton;
+	#end
 
 	public var playbackRate(default, set):Float = 1;
 
@@ -662,6 +670,11 @@ class PlayState extends MusicBeatState
 		#if !android
 		addTouchPad('NONE', 'P');
 		addTouchPadCamera();
+		#end
+
+		#if mobile
+		pauseButton = new PauseButton(camHUD);
+		add(pauseButton);
 		#end
 
 		super.create();
