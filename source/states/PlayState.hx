@@ -1736,6 +1736,10 @@ class PlayState extends MusicBeatState
 		}
 		else FlxG.camera.followLerp = 0;
 		callOnScripts('onUpdate', [elapsed]);
+		
+		#if mobile
+		pauseButton.updateButton(elapsed);
+		#end
 
 		super.update(elapsed);
 
