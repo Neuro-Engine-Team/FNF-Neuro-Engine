@@ -18,7 +18,6 @@ haxelib install hxcpp-debug-server 1.2.4 --skip-dependencies --quiet
 haxelib install hscript-iris 1.1.3 --skip-dependencies --quiet
 haxelib install SScript 8.1.6 --skip-dependencies --quiet
 
-haxelib git hxluajit https://github.com/MAJigsaw77/hxluajit --skip-dependencies --quiet
 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git --skip-dependencies --quiet
 haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate --skip-dependencies --quiet
 haxelib git funkin.vis https://github.com/FunkinCrew/funkVis 22b1ce089dd924f15cdc4632397ef3504d464e90 --skip-dependencies --quiet
