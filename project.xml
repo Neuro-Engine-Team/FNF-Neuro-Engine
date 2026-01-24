@@ -77,7 +77,7 @@
 	<assets path="assets/base_game/week6" rename="assets/week6" />
 	<assets path="assets/base_game/week7" rename="assets/week7" />
 	<assets path="assets/base_game/weekend1" rename="assets/weekend1" />
-	<assets path="assets/week_assets" rename="assets" exclude="*.mp3" unless="web" />
+	<assets path="assets/week_assets" rename="assets" exclude="*.mp3" />
 	<assets path="assets/secrets" rename="assets/shared" exclude="*.mp3" />
 
 	<section if="TRANSLATIONS_ALLOWED">
