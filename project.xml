@@ -91,6 +91,11 @@
 		<assets path="list.txt" rename="modsList.txt" />
 	</section>
 
+	<section if="BASE_GAME_FILES">
+		<haxelib name="grig.audio" if="BASE_GAME_FILES"/>
+		<haxelib name="funkin.vis" if="BASE_GAME_FILES"/>
+	</section>
+
 	<assets path="art/readme.txt" rename="do NOT readme.txt" unless="mobile" />
 
 	<section if="desktop">
