@@ -38,7 +38,7 @@
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
-	<window width="1280" height="720" fps="60" background="#000000"
+	<window width="0" height="0" fps="60" background="#000000"
 	        hardware="true" vsync="false" allow-high-dpi="true" />
 	<window if="html5" resizable="true" />
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
@@ -52,7 +52,8 @@
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
 
-	<config:android minimum-sdk-version="21" target-sdk-version="33" />
+	//old 21 and 33
+	<config:android minimum-sdk-version="25" target-sdk-version="35" />
 	<android permission="android.permission.MANAGE_EXTERNAL_STORAGE" />
 	<android permission="android.permission.READ_EXTERNAL_STORAGE" />
 	<android permission="android.permission.WRITE_EXTERNAL_STORAGE" />
