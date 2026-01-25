@@ -50,7 +50,12 @@
 	<android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android" />
 	<config:android display-cutout="shortEdges" if="android" />
 	<template path="templates/android/AndroidManifest.xml" rename="app/src/main/AndroidManifest.xml" if="android" />
-
+	<android>
+		<gradle>
+			<option name="namespace" value="com.thefrost72.neuroengine" />
+		</gradle>
+	</android>
+	
 	<classpath name="source" />
 
 	<!-- Assets -->
