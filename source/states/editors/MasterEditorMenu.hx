@@ -40,6 +40,7 @@ class MasterEditorMenu extends MusicBeatState
 		bg.scale.set(scale, scale);
 		bg.color = 0xFF353535;
 		add(bg);
+		bg.screenCenter();
 
 		grpTexts = new FlxTypedGroup<Alphabet>();
 		add(grpTexts);
