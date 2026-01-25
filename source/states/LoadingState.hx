@@ -138,8 +138,9 @@ class LoadingState extends MusicBeatState
 
 		#if PSYCH_WATERMARKS // PSYCH LOADING SCREEN
 		var bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		var scale = Math.max(FlxG.width / bg.width, FlxG.height / bg.height);
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-		bg.setGraphicSize(Std.int(FlxG.width));
+		bg.scale.set(scale, scale);
 		bg.color = 0xFFD16FFF;
 		bg.updateHitbox();
 		addBehindBar(bg);
