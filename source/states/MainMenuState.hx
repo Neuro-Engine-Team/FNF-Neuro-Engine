@@ -91,9 +91,10 @@ class MainMenuState extends MusicBeatState
 		{
 			var item:FlxSprite = createMenuItem(option, 0, ((num * 160) + 90) * scaleY);
 			item.y += (4 - optionShit.length) * 70 * scaleY; // Offsets for when you have anything other than 4 items
-			item.x -= 10 * uiScale;
 			item.scale.set(uiScale, uiScale);
 			item.screenCenter(X);
+			item.x -= 20 * uiScale;
+			item.y -= 13 * uiScale;
 			item.updateHitbox();
 		}
 
