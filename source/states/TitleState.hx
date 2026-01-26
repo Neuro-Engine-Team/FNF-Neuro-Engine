@@ -254,8 +254,8 @@ class TitleState extends MusicBeatState
 						var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(titleJSON.backgroundSprite));
 						var scaleBGJson = Math.max(FlxG.width / bg.width, FlxG.height / bg.height);
 						bg.scale.set(scaleBGJson, scaleBGJson);
-						bg.screenCenter();
 						bg.updateHitbox();
+						bg.screenCenter();
 						bg.antialiasing = ClientPrefs.data.antialiasing;
 						add(bg);
 					}
