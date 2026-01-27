@@ -89,7 +89,7 @@ class MainMenuState extends MusicBeatState
 		var uiScale:Float = Math.min(scaleX, scaleY);
 		for (num => option in optionShit)
 		{
-			var item:FlxSprite = createMenuItem(option, 0, ((num * 160) + 90) * scaleY);
+			var item:FlxSprite = createMenuItem(option, 0, ((num * 180) + 90) * scaleY);
 			item.y += (4 - optionShit.length) * 70 * scaleY; // Offsets for when you have anything other than 4 items
 			item.scale.set(uiScale, uiScale);
 			item.screenCenter(X);
