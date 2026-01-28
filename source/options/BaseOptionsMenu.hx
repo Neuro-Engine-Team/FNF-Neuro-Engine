@@ -61,6 +61,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		descBox = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
 		descBox.alpha = 0.6;
 		descBox.screenCenter(X);
+		descBox.y += FlxG.height * 0.10;
 		add(descBox);
 
 		var titleText:Alphabet = new Alphabet(75, 45, title, true);
@@ -72,6 +73,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		descText.scrollFactor.set();
 		descText.screenCenter(X);
+		descText.y += FlxG.height * 0.10;
 		descText.borderSize = 2.4;
 		add(descText);
 
