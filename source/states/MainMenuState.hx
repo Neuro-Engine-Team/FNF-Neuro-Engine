@@ -9,7 +9,7 @@ import options.OptionsState;
 enum MainMenuColumn {
 	LEFT;
 	CENTER;
-	RIGHT;
+	LEFT2;
 }
 
 class MainMenuState extends MusicBeatState
@@ -24,7 +24,7 @@ class MainMenuState extends MusicBeatState
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	var leftItem:FlxSprite;
-	var rightItem:FlxSprite;
+	var left2Item:FlxSprite;
 
 	//Centered/Text options
 	var optionShit:Array<String> = [
@@ -35,7 +35,7 @@ class MainMenuState extends MusicBeatState
 	];
 
 	var leftOption:String = #if ACHIEVEMENTS_ALLOWED 'achievements' #else null #end;
-	var rightOption:String = 'options';
+	var left2Option:String = 'options';
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -73,7 +73,7 @@ class MainMenuState extends MusicBeatState
 		magenta = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
 		var scaleM = Math.max(FlxG.width / magenta.width, FlxG.height / magenta.height);
-		magenta.scrollFactor.set(0, yScroll);
+		magenta.scrollFactor.set();
 		magenta.updateHitbox();
 		magenta.scale.set(scaleM, scaleM);
 		magenta.screenCenter();
@@ -93,7 +93,7 @@ class MainMenuState extends MusicBeatState
 			item.y += (4 - optionShit.length) * 70 * scaleY; // Offsets for when you have anything other than 4 items
 			item.scale.set(uiScale, uiScale);
 			item.screenCenter(X);
-			item.x -= 23 * uiScale;
+			item.x -= 25 * uiScale;
 			item.y -= 16 * uiScale;
 			if (option == 'story_mode')
 			{
@@ -103,14 +103,14 @@ class MainMenuState extends MusicBeatState
 		}
 
 		if (leftOption != null)
-		leftItem = createMenuItem(leftOption, 60, 490);
-		if (rightOption != null)
 		{
-		    rightItem = createMenuItem(rightOption, FlxG.width - 60, 490);
-		    rightItem.x -= rightItem.width;
+			leftItem = createMenuItem(leftOption, 60, 490);
+		}
 
-		if (leftItem != null)
-		rightItem.y = leftItem.y + leftItem.height + 20;
+		if (left2Option != null)
+		{
+			left2Item = createMenuItem(left2Option, FlxG.width - 60, 0);
+			left2Item.y = leftItem.y - left2Item.height - 10;
 		}
 
 		var neuroVer:FlxText = new FlxText(12, FlxG.height - 64, 0, "Neuro Engine v" + neuroEngineVersion, 12);
@@ -196,8 +196,8 @@ class MainMenuState extends MusicBeatState
 						selectedItem = menuItems.members[curSelected];
 					case LEFT:
 						selectedItem = leftItem;
-					case RIGHT:
-						selectedItem = rightItem;
+					case LEFT2:
+						selectedItem = left2Item;
 				}
 
 				if(leftItem != null && FlxG.mouse.overlaps(leftItem))
@@ -209,12 +209,12 @@ class MainMenuState extends MusicBeatState
 						changeItem();
 					}
 				}
-				else if(rightItem != null && FlxG.mouse.overlaps(rightItem))
+				else if(left2Item != null && FlxG.mouse.overlaps(rightItem))
 				{
 					allowMouse = true;
-					if(selectedItem != rightItem)
+					if(selectedItem != left2Item)
 					{
-						curColumn = RIGHT;
+						curColumn = LEFT2;
 						changeItem();
 					}
 				}
@@ -259,25 +259,28 @@ class MainMenuState extends MusicBeatState
 						curColumn = LEFT;
 						changeItem();
 					}
-					else if(controls.UI_RIGHT_P && rightOption != null)
-					{
-						curColumn = RIGHT;
-						changeItem();
-					}
-
 				case LEFT:
 					if(controls.UI_RIGHT_P)
 					{
 						curColumn = CENTER;
 						changeItem();
 					}
-
-				case RIGHT:
-					if(controls.UI_LEFT_P)
+					else if(controls.UI_DOWN_P && left2Option != null)
+					{
+						curColumn = LEFT2;
+						changeItem();
+					}
+				case LEFT2:
+					if(controls.UI_RIGHT_P)
 					{
 						curColumn = CENTER;
 						changeItem();
 					}
+					else if(controls.UI_UP_P && leftOption != null)
+					{
+						curColumn = LEFT;
+						changeItem();
+			        }
 			}
 
 			if (controls.BACK)
@@ -309,9 +312,9 @@ class MainMenuState extends MusicBeatState
 						option = leftOption;
 						item = leftItem;
 
-					case RIGHT:
-						option = rightOption;
-						item = rightItem;
+					case LEFT2:
+						option = left2Option;
+						item = left2Item;
 				}
 
 				FlxFlicker.flicker(item, 1, 0.06, false, false, function(flick:FlxFlicker)
@@ -393,8 +396,9 @@ class MainMenuState extends MusicBeatState
 				selectedItem = menuItems.members[curSelected];
 			case LEFT:
 				selectedItem = leftItem;
-			case RIGHT:
-				selectedItem = rightItem;
+			case LEFT2:
+				selectedItem = left2
+				Item;
 		}
 		selectedItem.animation.play('selected');
 		selectedItem.centerOffsets();
